@@ -1,0 +1,10 @@
+***SVELTE TUTORIALS***
+https://svelte.dev/tutorial
+https://svelte.dev/blog/svelte-for-new-developers
+https://learn.svelte.dev/tutorial/introducing-sveltekit
+
+***CSS REFERENCE***
+https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Mastering_Wrapping_of_Flex_Items
+
+***TRANSITIONS REFERENCE***
+https://dev.to/giorgosk/smooth-page-transitions-in-layout-svelte-with-sveltekit-or-sapper-4mm1

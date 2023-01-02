@@ -1,0 +1,9 @@
+[
+    {
+        "id": 1,
+        "name": "Emerald",
+        "img": "emerald.png",
+        "links": [["Github", "https://github.com/geraldnyeo/emerald"]],
+        "description": "A blockchain website. (Expand on this later...)"
+    }
+]
