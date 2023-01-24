@@ -1,9 +1,18 @@
 [
     {
+        "id": 0,
+        "name": "Portfolio",
+        "img": "portfolio.png",
+        "links": [["github", "https://github.com/geraldnyeo/portfolio"],
+                    ["website", "https://portfolio-geraldnyeo.vercel.app/"]],
+        "description": "My portfolio website."
+    },
+    {
         "id": 1,
         "name": "Emerald",
         "img": "emerald.png",
-        "links": [["Github", "https://github.com/geraldnyeo/emerald"]],
-        "description": "A blockchain website. (Expand on this later...)"
+        "links": [["github", "https://github.com/geraldnyeo/emerald"], 
+                    ["website", "https://emerald-geraldnyeo.vercel.app/"]],
+        "description": "A blockchain website. (Expand on this later.)"
     }
 ]

@@ -24,6 +24,7 @@
 
 <br />
 <h2>contact</h2>
+<p>Email: geraldnyeo@gmail.com</p>
 
 <style>
     h1 {

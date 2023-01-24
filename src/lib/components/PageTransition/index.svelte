@@ -20,8 +20,7 @@
         display: flex;
         flex-direction: column;
         flex-grow: 1;
-        padding: 50px;
-        padding-right: 100px;
+        padding: 50px 100px 50px 50px;
     }
 
     main br {

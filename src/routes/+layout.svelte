@@ -8,9 +8,13 @@
 </script>
 
 <aside>
-    <a href="/">home</a>
-    <a href="/about">about</a>
-    <a href="/projects">projects</a>
+    <div id="navline">
+        <ul>
+            <li><a href="/">home</a></li>
+            <li><a href="/about">about</a></li>
+            <li><a href="/projects">projects</a></li>
+        </ul>
+    </div>
 </aside>
 
 
@@ -52,20 +56,45 @@
 
     aside {
         display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding: 0 50px 0 50px;
-        background: transparent;
+        padding: 0 30px 0 30px;
+    }
+
+    aside li {
+        position: relative;
+        left: -25px;
+        /*color: #e0bfb7;*/
+        list-style: none;
+        background: url("images/nav_bullet.png");
+        background-repeat: no-repeat;
+        background-size: 10px;
+        background-position: 0 .25em;
+        padding-left: 1.2em;
+    }
+    
+    aside li::before {
+        
     }
 
     aside a {
+        margin: 2px 0 2px 0;
+        color: black;
         text-decoration: none;
+    }
+
+    #navline {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        flex: 1;
+        padding: 0 20px 0 20px;
+        border-left: 2px solid #e0bfb7;
+        background: transparent;
     }
 
     #main-wrapper {
         display: flex;
         flex-direction: column;
+        flex: 1;
     }
 
     footer {

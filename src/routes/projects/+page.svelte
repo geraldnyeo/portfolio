@@ -1,8 +1,23 @@
-<script>    
+<script>
+    import { cubicInOut } from 'svelte/easing';
     import projects from '../../lib/data/projects.json';
 
     let card = '';
     let select = '';
+
+    // Transitions
+    const t_screen_in = (node, { duration = 1000 }) => {
+        const maxHeight = node.parentNode.clientHeight;
+
+        return {
+            duration,
+            easing: cubicInOut,
+            tick: t => {
+                let height = t * maxHeight
+                node.style.height = `${height}px`;
+            }
+        }
+    }
 </script>
 
 <h1>projects</h1>
@@ -34,40 +49,31 @@
             on:mouseup={() => {
                 select = '';
             }}>
-            {#if select === ''}
-                <img src={`/images/${project.img}`} alt={`${project.name}'s icon`}/>
-                <br />
-                <span>{project.name}</span>
-                
+            <img src={`/images/${project.img}`} alt={`${project.name}'s icon`}/>
+            <br />
+            <span>{project.name}</span>
+            
+            <div class="links">
                 {#if card === project.name}
-                    {#each project.links as link (project.id)}
-                        <!-- TODO: Link no longer works because click clicks the div -->
-                        <!-- There's a solution to this on the svelte tutorial -->
-
+                    {#each project.links as link (link[0])}
                         <a href={link[1]}
                             target="_blank"
                             rel="noopener noreferrer"
+                            on:mousedown|stopPropagation
                             >
                             {link[0]}
                         </a>
                     {/each}
                 {/if}
-            {/if}
-
+            </div>
+            
             {#if select === project.name}
-                <p>{project.description}</p>
+                <div class="description" transition:t_screen_in>
+                    <p>{project.description}</p>
+                </div>
             {/if}
         </div>
     {/each}
-
-    <div class="project">
-    </div>
-    <div class="project">
-    </div>
-    <div class="project">
-    </div>
-    <div class="project">
-    </div>
 </div>
 
 <style>
@@ -83,22 +89,24 @@
     #projects-wrapper {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        grid-gap: 40px;
+        margin: 20px;
     }
 
     .project {
         display: flex;
         flex-direction: column;
-        justify-content: center;
         align-items: center;
+        position: relative;
         height: 250px;
-        margin: 20px;
-        padding: 10px;
         background-color: #fafafa;
         box-shadow: 2px 2px #aaaaaa;
+        overflow: hidden;
     }
 
     .project img {
         display: block;
+        margin-top: 10%;
         max-width: 50%;
         max-height: 50%;
         width: auto;
@@ -109,8 +117,28 @@
         padding: 10px;
     }
 
-    .project p {
-        padding: 20px 12px;
+    .project .links {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .project .links a {
+        margin-left: 3px;
+        margin-right: 3px;
+        padding: 1px;
+    }
+
+    .project .description {
+        position: absolute;
+        width: 100%;
         margin-bottom: auto;
+        overflow: hidden;
+        background-color: #f3f3f3;
+    }
+
+    .project .description p {
+        padding: 20px 24px;
+        margin-bottom: auto;
+        word-break: break-word;
     }
 </style>
