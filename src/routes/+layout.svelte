@@ -62,17 +62,12 @@
     aside li {
         position: relative;
         left: -25px;
-        /*color: #e0bfb7;*/
         list-style: none;
-        background: url("images/nav_bullet.png");
+        background-image: url("images/nav_bullet.png");
         background-repeat: no-repeat;
         background-size: 10px;
         background-position: 0 .25em;
         padding-left: 1.2em;
-    }
-    
-    aside li::before {
-        
     }
 
     aside a {
