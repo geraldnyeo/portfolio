@@ -5,9 +5,11 @@
 
     let refresh = '';
     $: refresh = $page.route.id;
+
+    let dropdown = false;
 </script>
 
-<aside>
+<aside id="nav-lg">
     <div id="navline">
         <ul>
             <li><a href="/">home</a></li>
@@ -18,6 +20,27 @@
 </aside>
 
 
+<div id="nav-sm">
+    <div id="navblock">
+        <div id="dropdown-btn"
+            on:mousedown={() => {
+                dropdown = !dropdown;
+            }}>
+            <img src="/images/nav_bullet.png" />
+            <img src="/images/nav_bullet.png" />
+            <img src="/images/nav_bullet.png" />
+        </div>
+        {#if dropdown}
+            <ul id="dropdown">
+                <li><a href="/">home</a></li>
+                <li><a href="/about">about</a></li>
+                <li><a href="/projects">projects</a></li>
+            </ul>
+        {/if}
+    </div>
+</div>
+
+
 <div id="main-wrapper">
     {#key refresh}
         <PageTransition>
@@ -26,7 +49,7 @@
     {/key}
 
     <footer>
-        2023
+        2024
     </footer>
 </div>
 
@@ -54,26 +77,26 @@
         background-size: cover;
     }
 
-    aside {
-        display: flex;
-        padding: 0 30px 0 30px;
+    /*Responsive Navbar*/
+    @media only screen and (max-width: 600px) {
+        #nav-lg {
+            display: none;
+        }
+
+        #nav-sm {
+            display: flex;
+        }
     }
 
-    aside li {
-        position: relative;
-        left: -25px;
-        list-style: none;
-        background-image: url("images/nav_bullet.png");
-        background-repeat: no-repeat;
-        background-size: 10px;
-        background-position: 0 .25em;
-        padding-left: 1.2em;
-    }
+    @media only screen and (min-width: 600px) {
+        #nav-lg {
+            display: flex;
+            padding: 0 30px 0 30px;
+        }
 
-    aside a {
-        margin: 2px 0 2px 0;
-        color: black;
-        text-decoration: none;
+        #nav-sm {
+            display: none;
+        }
     }
 
     #navline {
@@ -84,6 +107,62 @@
         padding: 0 20px 0 20px;
         border-left: 2px solid #e0bfb7;
         background: transparent;
+    }
+
+    #navline li {
+        position: relative;
+        left: -25px;
+        list-style: none;
+        background-image: url("images/nav_bullet.png");
+        background-repeat: no-repeat;
+        background-size: 10px;
+        background-position: 0 .25em;
+        padding-left: 1.2em;
+    }
+
+    #navline a {
+        margin: 2px 0 2px 0;
+        color: black;
+        text-decoration: none;
+    }
+
+    #nav-sm {
+        position: fixed;
+        width: 100%;
+        top: 0;
+        overflow: hidden;
+        z-index: 99;
+    }
+
+    #navblock {
+        display: flex;
+        flex-direction: column;
+        flex-basis: 100%;
+        background: #e0bfb7;
+    }
+
+    #dropdown-btn {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        padding: 10px;
+    }
+
+    #dropdown {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #navblock li {
+        list-style: none;
+        padding: 10px;
+        text-align: center;
+    }
+
+    #navblock a {
+        margin: 2px 0 2px 0;
+        color: black;
+        text-decoration: none;
     }
 
     #main-wrapper {
