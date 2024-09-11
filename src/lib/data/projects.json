@@ -1,0 +1,26 @@
+[
+    {
+        "id": 0,
+        "name": "Portfolio",
+        "img": "portfolio.png",
+        "links": [["github", "https://github.com/geraldnyeo/portfolio"],
+                    ["website", "https://portfolio-geraldnyeo.vercel.app/"]],
+        "description": "My portfolio website."
+    },
+    {
+        "id": 1,
+        "name": "Emerald",
+        "img": "emerald.png",
+        "links": [["github", "https://github.com/geraldnyeo/emerald"], 
+                    ["website", "https://emerald-geraldnyeo.vercel.app/"]],
+        "description": "A blockchain website demo which allows users to save their money collectively through pools."
+    },
+    {
+        "id": 2,
+        "name": "RSNBusBot",
+        "img": "rsnbusbot.png",
+        "links": [["github", "https://github.com/geraldnyeo/RSNBusBot"],
+                    ["telegram", "https://t.me/RSNBusBot"]],
+        "description": "A telegram bot built for the initial roll-out of RSN's island-wide shuttle service for service personnel to assist seat reservation."
+    }
+]
