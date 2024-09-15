@@ -3,9 +3,8 @@
 <br />
 <p align="justify">
     Hi! I'm Gerald, a (to-be) undergraduate studying Computer Science. 
-    I'm primarily a programmer, with a strong passion for software engineering and machine learning.
+    I'm a programmer, with a strong passion for software engineering and machine learning.
     That being said, I have an interest in all kinds of coding applications, from game-making to web3 and so on.
-    I love the process of creating things - when I'm not working on a new programming project, I enjoy making music, doing simple crafts and worldbuilding.
 </p>
 
 <br />
@@ -29,6 +28,8 @@
 
 <h2>contact</h2>
 <p>Email: geraldnyeo@gmail.com</p>
+<p>GitHub: https://github.com/geraldnyeo</p>
+<p>Kaggle: https://www.kaggle.com/geraldnyeo</p>
 
 <style>
     h1 {
