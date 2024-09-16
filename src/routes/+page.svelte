@@ -1,6 +1,6 @@
 <div id="title-card">
     <h1>gerald nyeo</h1>
-    <h3>programmer, primarily.</h3>
+    <h3>programmer.</h3>
 </div>
 
 <style>
